@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/lesson01/quiz10")
 public class PostMethodQuiz10 extends HttpServlet {
 	
+	  // 주석 추가
+	
+	
 	private final Map<String, String> userMap =  new HashMap<String, String>() {
 	    {
 	        put("id", "marobiana");
@@ -21,6 +24,8 @@ public class PostMethodQuiz10 extends HttpServlet {
 	    }
 	};
 	
+	
+	 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html");
