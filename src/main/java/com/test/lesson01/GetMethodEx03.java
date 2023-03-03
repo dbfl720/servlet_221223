@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 // QueryString 쿼리스트링 '?'
 @WebServlet("/lesson01/ex03")
 public class GetMethodEx03 extends HttpServlet {
+	// 클론 후 주석 추가
+	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/json");
