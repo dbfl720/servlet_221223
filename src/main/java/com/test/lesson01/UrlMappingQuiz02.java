@@ -1,0 +1,32 @@
+package com.test.lesson01;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UrlMappingQuiz02 extends HttpServlet {
+	
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// 한글 깨짐 방지
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("utf-8");
+		
+		PrintWriter out = response.getWriter();
+		Date now = new Date();
+		//out.println(now);
+
+				
+//	   시간은 두자리라서 대문자 써야함.
+		SimpleDateFormat today = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
+		out.println(today.format(now));
+		// out.println("현재 시간은" + today.format(now) + "입니다.");
+		
+		
+	}
+}
