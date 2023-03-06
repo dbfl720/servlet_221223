@@ -7,6 +7,7 @@
 <title>Get method</title>
 </head>
 <body>
+<!-- request 객체는 jsp에서 바로 사용할 수 있다.  -->
 	<b>아이디</b>
 	<%= request.getParameter("user_id") %>
 	<br>

@@ -1,6 +1,7 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%@ page import="java.util.*" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,26 +12,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <body>
-	
 	<%
-	String type = request.getParameter("type");
-	Date now = new Date();
-	SimpleDateFormat sdf = null;
-	
-	
-	if (type.equals("time")) {
-	    sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
-	} else if (type.equals("date")){
-		sdf = new SimpleDateFormat("오늘의 날짜는 yyyy년 MM월 dd일 입니다.");
-	}
-	
-	String result = sdf.format(now);
+		String type = request.getParameter("type");
+		Date now = new Date();
+		SimpleDateFormat sdf = null;
+		
+		if (type.equals("time")) {
+			sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
+		} else if (type.equals("date")) {
+			sdf = new SimpleDateFormat("오늘의 날짜는 yyyy년 MM월 dd일 입니다.");
+		}
+		
+			String result = sdf.format(now);  // 변수의 생애 주기 중요함.	
 	%>
-
-
-
-	<div class="container">
-		<span class="display-4"><%= result  %></span>
+	
+	<div class = "container">
+		<span class="display-4"><%= result %></span>  <!-- display (1~4): 글씨 크게하기 (1 제일큼)  -->
 	</div>
 </body>
 </html>

@@ -12,24 +12,20 @@
 	List<String> list = new ArrayList<>();
 	
 	%>
-	<!-- jsp의 선언문 <%! %> 문법을 사용해서 1부터 N까지의 합을 구하는 함수를 만드세요. -->
-	<%	
-	// input : n
-	// output : sum결과
-/* 	public int N = 50;
-	int sum = 0;
-	for (int i = 1; i <= N; i++) {
-		sum += i;
-	}	 */
 	
-	/* 선생님 코드 */
-       /*  public int getSum(int n) {
+	
+	<!-- jsp의 선언문 <%! %> 문법을 사용해서 1부터 N까지의 합을 구하는 함수를 만드세요. -->
+	<%!	
+	
+	
+	 /* 선생님 코드 */
+       public int getSum(int n) {
 		int sum = 0;
 		for (int i = 1; i <= n; i++) {
 			sum += i;
 		}
 		return sum;
-	} */
+	}     
 	%>
 	
 
@@ -87,7 +83,8 @@
 	
 	
 	
-	<%-- <h1>1부터 50까지의 합은 <%=getSum(50)%> 입니다.</h1>  --%>
+	<%-- 출력할 때는 html 구간에서 한다!!  --%>
+	<h1>1부터 50까지의 합은 <%= getSum(50) %></h1>
 	<h1> 평균 점수는 <%= average %>입니다.</h1>
 	<h1>채점 결과는 <%= b %>점 입니다.</h1>
 	<h1><%=birthDay %>의 나이는 <%=age %>세입니다.</h1>
