@@ -20,24 +20,22 @@
 	
 	if(BMI <= 20) {
 		result = "저체중";
-	} else if(BMI >= 21 & BMI <= 25) {
+	} else if(BMI <= 25) {
 		result = "정상";	
-	} else if(BMI >= 26 & BMI <= 30) {
+	} else if(BMI <= 30) {
 		result = "과체중";	
 	} else {
 		result = "비만";		
 	}
-		
-		String a = result;
 		
 		
 		
 		
 	%>
 	
-	<div class="container">
+	<div class="container">  <!-- 레이아웃용 :container -->
 		<div class="display-4">BMI 측정 결과</div><br>
-		<div class="display-2 d-flex">당신은  <div class="text-info d-flex"><%= a %></div> 입니다.</div><br>
+		<div class="display-2 d-flex">당신은  <div class="text-info d-flex"><%= result %></div> 입니다.</div><br>
 		<span>BMI 수치 : <%=BMI %> </span>
 	</div>
 
