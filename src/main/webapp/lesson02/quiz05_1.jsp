@@ -18,26 +18,37 @@
 	// checkbox처럼 여러 파라미터가 넘어올 때 getParameterValues  ( 스프링 넘어가면 안씀.. 기억안해도 됨)
 	
 	String[] calculations = request.getParameterValues("calculation");
-	double result = 0;
-	String printCalculation = null;
+	double result1 = 0;
+	double result2 = 0;
+	double result3 = 0;
+	double result4 = 0;
+	String printCalculation1 = null;
+	String printCalculation2 = null;
+	String printCalculation3 = null;
+	String printCalculation4 = null;
 	
-	switch(calculations) {
-	case "inch":
-		result = cm / 2.54;
-		printCalculation = "in";
-		break;
-	case "yard":
-		result = cm / 91.44;
-		printCalculation = "yd";
-		break;
-	case "feet":
-		result = cm / 30.48;
-		printCalculation = "ft";
-		break;
-	case "meter":
-		result = cm / 100;
-		printCalculation = "m";
-		break;
+	
+	for (String results : calculations) {
+		if(results.equals("inch")){
+			result1 = cm * 0.393;
+			printCalculation1 = "in";
+			
+		}
+		if(results.equals("yard")){
+			result2 = cm / 91.44;
+			printCalculation2 = "yd";	
+		
+		}
+		
+		if(results.equals("feet")){
+			result3 = cm / 30.48;
+			printCalculation3 = "ft";
+		}
+		
+		if(results.equals("meter")) {
+			result4 =  cm * 0.01;
+			printCalculation4 = "m";
+		}
 		
 	}
 	
@@ -45,12 +56,18 @@
 	
 	<div class="container">
 		<h1>길이 변환 결과</h1>
-		<h3><%= cm %> cm</h3> 
-		
+		<h3><%= cm %> cm</h3> 	
 		<hr>
-		<%
-		out.println(result + " " + printCalculation);
-		%>
+		<span><h3><%= result1 + " " + printCalculation1
+		%></h3></span>
+		<span><h3>
+		<%= result2 + " " +  printCalculation2 %>
+		<span></h3></span>
+		<span><h3><%= result3 + " " + printCalculation3
+		%></h3></span>
+		<span><h3><%= result4 + " " + printCalculation4
+		%></h3></span>
+		
 	</div>
 </body>
 </html>
