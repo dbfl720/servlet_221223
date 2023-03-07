@@ -18,39 +18,7 @@
 	// checkbox처럼 여러 파라미터가 넘어올 때 getParameterValues  ( 스프링 넘어가면 안씀.. 기억안해도 됨)
 	
 	String[] calculations = request.getParameterValues("calculation");
-	double result1 = 0;
-	double result2 = 0;
-	double result3 = 0;
-	double result4 = 0;
-	String printCalculation1 = null;
-	String printCalculation2 = null;
-	String printCalculation3 = null;
-	String printCalculation4 = null;
-	
-	
-	for (String results : calculations) {
-		if(results.equals("inch")){
-			result1 = cm * 0.393;
-			printCalculation1 = "in";
-			
-		}
-		if(results.equals("yard")){
-			result2 = cm / 91.44;
-			printCalculation2 = "yd";	
-		
-		}
-		
-		if(results.equals("feet")){
-			result3 = cm / 30.48;
-			printCalculation3 = "ft";
-		}
-		
-		if(results.equals("meter")) {
-			result4 =  cm * 0.01;
-			printCalculation4 = "m";
-		}
-		
-	}
+
 	
 	%>
 	
@@ -58,15 +26,29 @@
 		<h1>길이 변환 결과</h1>
 		<h3><%= cm %> cm</h3> 	
 		<hr>
-		<span><h3><%= result1 + " " + printCalculation1
-		%></h3></span>
-		<span><h3>
-		<%= result2 + " " +  printCalculation2 %>
-		<span></h3></span>
-		<span><h3><%= result3 + " " + printCalculation3
-		%></h3></span>
-		<span><h3><%= result4 + " " + printCalculation4
-		%></h3></span>
+		
+		<h2>
+			<%
+			if(calculations != null) {
+				for (String calculation : calculations) { // inch, yard, feet, meter
+					if (calculation.equals("inch")) {
+					double inch	 = cm * 0.393701;
+						out.print(inch + "in<br>");
+					} else if (calculation.equals("yard")) {
+						double yard = cm * 0.0109361;
+						out.print(yard + "yd<br>");
+					} else if (calculation.equals("feet")) {
+						double feet = cm * 0.0328084;
+						out.print(feet + "ft<br>");
+					} else if (calculation.equals("meter")){
+						double meter = cm / 100.0;
+						out.print(meter + "m<br>");
+					}
+				
+				}
+			}
+			%>
+		</h2>
 		
 	</div>
 </body>
