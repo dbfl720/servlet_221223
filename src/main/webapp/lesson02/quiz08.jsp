@@ -65,12 +65,12 @@ list.add(map);
 
 	<div class="container">
 		<h1 class="text-center mt-5">책 목록</h1>
-		<table class="table">
+		<table class="table text-center">
 			<thead>
-				<tr>
-					<th class="text-center" style= "width: 130px;">id</th>
-					<th class="text-center" style= "width: 190px;">표지</th>
-					<th class="text-center">제목</th>		
+				<tr class="row">
+					<th class="col-1" >id</th>
+					<th class="col-2">표지</th>
+					<th class="col-9">제목</th>		
 				</tr>
 			
 			
@@ -85,11 +85,12 @@ list.add(map);
 			
 			%>
 			
-			
-				<tr>
-					<td class="text-center"><%= book.get("id") %></td>
-					<td class="text-center"><img src= "<%= book.get("image") %>" width="100" height="100"></td>
-					<td class="text-center"><a href="/lesson02/quiz08_1.jsp?bookTitle=<%= book.get("title")%>"><%= book.get("title")%></a></td>
+				<!-- id가 정확함. 유일한 값만 있기 때문에. -->
+				<tr class="row">
+					<td class="col-1"><%= book.get("id") %></td>
+					<td class="col-2"><img src= "<%= book.get("image") %>" alt="표지" width="100" height="100"></td>
+					<td class="col-9">
+						<a href="/lesson02/quiz08_1.jsp?id=<%= book.get("id")%>"><%= book.get("title")%></a></td>  
 				</tr>
 			<%
 				}

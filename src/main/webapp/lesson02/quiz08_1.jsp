@@ -59,30 +59,37 @@ list.add(map);
 
 %>
 
-	<div class="container">
+	
 	
 	<%
-		String bookTitle = request.getParameter("bookTitle");
+	// 보여줄 책 정보 뽑아내기 (유리 코드)
+	/* 	int id = Integer.valueOf(request.getParameter("id"));
 		for(Map<String, Object> book : list) {
-			if(book.get("title").equals(bookTitle)){
+			if(book.get("id").equals(id)){ */
 				
 			
-		
+	// 샘 코드
+	int id = Integer.valueOf(request.getParameter("id"));
+	Map<String, Object> target = new HashMap<>();
+	for (Map<String, Object> item : list) {
+		if ((Integer) item.get("id") == id) {
+			target= item;
+			break;
+		}
+	}
 		
 
 	%>
-	<div class="container d-flex">
-	<img src= "<%= book.get("image") %>" width="300" height="400" >
+	
+	<div class="container">
+		<div class="d-flex">
+		<img src= "<%=target.get("image") %>" art="표지" width="300" height="400" >
 		<div class="ml-3 mt-3">
-			<div style="font-size: 80px"><strong><%= book.get("title") %></strong></div>
-			<div class="text-info" style="font-size: 70px"><%= book.get("author") %></div>
-			<div class="text-secondary" style="font-size: 45px"><%= book.get("publisher") %></div>
+			<div class="display-1 font-weight-bold"><strong><%= target.get("title") %></strong></div>
+			<div class="display-3 text-info" ><%= target.get("author") %></div>
+			<div class="display-4 text-secondary" style="font-size: 45px"><%= target.get("publisher") %></div>
 		</div>
 	</div>
-	<%
-			}
-		}
-	%>
 	</div>
 
 </body>
