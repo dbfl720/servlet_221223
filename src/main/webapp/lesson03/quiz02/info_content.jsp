@@ -84,46 +84,72 @@ musicList.add(musicInfo);
 %>
 
 
-
-
-
-
-
-
-<!-- 아티스트 정보 영역 -->
-<!-- border 만들기 : class="border border-success" -->
-<article class="article1  d-flex">
-	<div class="d-flex align-items-start mt-3">
-	
 		<% 
-		    Integer ID = Integer.valueOf(request.getParameter("ID"));
-			String search = request.getParameter("search");
-			Map<String, Object> target = new HashMap<>();
-			for(Map<String, Object> items : musicList) {
-				if (items.get("title").equals(search) || items.get("id") == ID ) {
-					target= items;
-					break;
-				} 
+			
+			Map<String, Object> target = null;
+			
+			// 1. id로 넘어오는 경우
+			if (request.getParameter("id") != null) {    // 아이디가 비어있지 않을때만!!!!!!
+ 			    int id = Integer.valueOf(request.getParameter("id"));		
+				for(Map<String, Object> item : musicList) {
+					if((int)item.get("id") == id ) {
+						target= item;
+						break; // 반복문 조금만 돌게 된다. 
+					} 
+				}
 			}
 			
+			
+			// 2. search로 넘어온 경우
+			if (request.getParameter("search") != null) {
+				String search = request.getParameter("search");
+				for (Map<String, Object> item : musicList) {
+					if (item.get("title").equals(search)) {
+						target = item;
+						break;
+					}
+				}
+			}
 		%>
+
+
+
+
+<%
+	if (target != null) {
 		
+
+
+%>
+<!-- 아티스트 정보 영역 -->
+<!-- border 만들기 : class="border border-success" -->
+<h3 class="mt-3">곡 정보</h3>
+<article class="article1  d-flex">
+	<div class="d-flex align-items-start mt-3">		
 		<img
 			src="<%= target.get("thumbnail") %>"
 			alt="곡 앨범 사진" width="190" height="190" class="ml-3">
 		<div class="ml-4 ">
 
-
-			<h1 class="font-weight-bold"><%=target.get("title")%></h1>
+		
+			<div class="display-4 music-info-title"><%=target.get("title")%></div>
 			<div class="text-success font-weight-bold mb-2"><%=target.get("singer") %></div>
 			
-			<div class="text-secondary">
-				<div><small>앨범</small>   <small class="ml-5"><%=target.get("album")%></small></div>
-				<div><small>재생시간</small> <small class="ml-3"><%=target.get("time")%></small></div>
-				<div><small>작곡가</small> <small class="ml-4"><%=target.get("composer")%></small></div>
-				<div><small>작사가</small> <small class="ml-4"><%=target.get("lyricist")%></small></div>
+			<div class="music-info-text text-secondary d-flex">
+				<div class= "mr-3">
+					<div>앨범</div>
+					<div>재생시간</div>
+					<div>작곡가</div>
+					<div>작사가</div>
+				</div>		
+		    
+				<div>
+					<div><%=target.get("album")%></div>
+					<div><%=(int)target.get("time") / 60 %>:<%=(int)target.get("time") % 60 %></div>
+					<div><%=target.get("composer")%></div>
+					<div><%=target.get("lyricist")%></div>		
+				</div>
 			</div>
-			
 		
 		</div>	
 	</div>
@@ -136,3 +162,13 @@ musicList.add(musicInfo);
 	<div>가사 정보 없음</div>
 	<hr>
 </article>
+
+<%
+	} else {
+		
+	
+%>
+<div>검색 정보가 없습니다.</div>
+<%
+	}
+%>

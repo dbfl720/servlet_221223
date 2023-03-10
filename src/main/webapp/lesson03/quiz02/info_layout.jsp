@@ -14,25 +14,26 @@
 header {min-height: 80px; padding-top:70px; padding-bottom:20px;}
 a, a:hover {text-decoration: 100px;}
 nav {min-height: 50px;}
-section {min-height: 730px;}
-.article1 {min-height:230px;  border: 4px solid green;}
-.article2 {min-height:500px;}
+section {height: 730px;}
+.article1 {height:230px;  border: 4px solid green;}
+.article2 {height:500px;}
+.music-info-text {font-size: 15px;}
 footer {min-height: 50px;}
 </style>
 </head>
 <body>
 	<div id="wrap" class="container">
 		<header class=" d-flex align-items-center">
-			<jsp:include page="info_header.jsp" />
+			<jsp:include page="list_header.jsp" />
 		</header>
 		<nav class=" d-flex align-items-center">
-			<jsp:include page="info_menu.jsp" />
+			<jsp:include page="list_menu.jsp" />
 		</nav>
 		<section class="">
 			<jsp:include page="info_content.jsp" />
 		</section>
 		<footer class=" d-flex  align-items-center">
-			<jsp:include page="info_footer.jsp" />
+			<jsp:include page="list_footer.jsp" />
 		</footer>
 	</div>
 </body>

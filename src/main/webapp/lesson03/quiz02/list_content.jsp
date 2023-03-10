@@ -96,8 +96,7 @@ musicList.add(musicInfo);
 <!-- border 만들기 : class="border border-success" -->
 <article class="article1  d-flex">
 	<div class="d-flex align-items-start mt-3">
-		<img src="<%=artistInfo.get("photo")%>" alt="아이유 사진" width="190"
-			height="190" class="ml-3">
+		<img src="<%=artistInfo.get("photo")%>" alt="아이유 사진" width="190" height="190" class="ml-3">
 		<div class="ml-4 ">
 
 
@@ -134,7 +133,7 @@ musicList.add(musicInfo);
 			<tr>
 				<td class="col-2"><%=items.get("id")%></td>
 				<td class="col-4"><a
-					href="/lesson03/quiz02/info_layout.jsp?ID=<%=items.get("id")%>"><%=items.get("title")%></a></td>
+					href="/lesson03/quiz02/info_layout.jsp?id=<%=items.get("id")%>"><%=items.get("title")%></a></td>
 				<td class="col-6"><%=items.get("album")%></td>
 			</tr>
 
