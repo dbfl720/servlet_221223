@@ -132,7 +132,7 @@ musicList.add(musicInfo);
 
 			<tr>
 				<td class="col-2"><%=items.get("id")%></td>
-				<td class="col-4"><a
+				<td class="col-4"><a class="text-success font-weight-bold"
 					href="/lesson03/quiz02/info_layout.jsp?id=<%=items.get("id")%>"><%=items.get("title")%></a></td>
 				<td class="col-6"><%=items.get("album")%></td>
 			</tr>

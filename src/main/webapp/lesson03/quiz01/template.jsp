@@ -12,8 +12,9 @@
 
 <style>
 header {height: 80px; font-size: 40px;}
+.headerText1 {color : #e2703a;}
 nav {height: 50px;}
-.contents {min-height: 850px;} /*  min-hight 하면 높이 자동적으로 늘어남.!!*/
+.contents {height: 850px;} /*  min-hight 하면 최소 높이 지정.*/
 footer {height: 50px;}
 </style>
 </head>
@@ -26,7 +27,7 @@ footer {height: 50px;}
 
 
 	<div id="wrap" class=" container text-center">
-		<header class="text-danger d-flex font-weight-bold align-items-center justify-content-center">
+		<header class="d-flex font-weight-bold align-items-center justify-content-center">
 			<jsp:include page="header.jsp" />
 		</header>
 		<!-- align-items-center : 수직기준 가운데 정렬 -->

@@ -84,32 +84,33 @@ musicList.add(musicInfo);
 %>
 
 
-		<% 
-			
-			Map<String, Object> target = null;
-			
+		<%
+		Map<String, Object> target = null;
+				
+				
+			// id와 search는 null값이 들어올 수 있기 때문에, 각각 코드를 나눠서 구현해야한다. 합쳐서 구현하면, 둘 중 하나는 Null이 들어갈 수 있기에 합쳐서 구현 불가.
 			// 1. id로 넘어오는 경우
-			if (request.getParameter("id") != null) {    // 아이디가 비어있지 않을때만!!!!!!
- 			    int id = Integer.valueOf(request.getParameter("id"));		
-				for(Map<String, Object> item : musicList) {
-					if((int)item.get("id") == id ) {
-						target= item;
-						break; // 반복문 조금만 돌게 된다. 
-					} 
-				}
-			}
-			
-			
-			// 2. search로 넘어온 경우
-			if (request.getParameter("search") != null) {
-				String search = request.getParameter("search");
-				for (Map<String, Object> item : musicList) {
-					if (item.get("title").equals(search)) {
-						target = item;
-						break;
+			 	if (request.getParameter("id") != null) {    // 아이디가 비어있지 않을때만!!!!!!
+				    int id = Integer.valueOf(request.getParameter("id"));		
+					for(Map<String, Object> item : musicList) {
+						if((int)item.get("id") == id ) {
+							target= item;
+							break; // 반복문 조금만 돌게 된다. 
+						} 
 					}
 				}
-			}
+				
+				
+				// 2. search로 넘어온 경우
+				if (request.getParameter("search") != null) {
+					String search = request.getParameter("search");
+					for (Map<String, Object> item : musicList) {
+						if (item.get("title").equals(search)) {
+							target = item;
+							break;
+						}
+					}
+				} 
 		%>
 
 
@@ -168,7 +169,7 @@ musicList.add(musicInfo);
 		
 	
 %>
-<div>검색 정보가 없습니다.</div>
+<div class="mt-5 ml-5">검색 정보가 없습니다.</div>
 <%
 	}
 %>

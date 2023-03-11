@@ -11,14 +11,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 <style>
-header {min-height: 80px; padding-top:40px; padding-bottom:20px;}
+header {height: 80px; padding-top:40px; padding-bottom:20px;}
 
 a, a:hover {text-decoration: 100px;}
-nav {min-height: 50px;}
-section {min-height: 730px;}
-.article1 {min-height:230px;  border: 4px solid green;}
-.article2 {min-height:500px;}
-footer {min-height: 50px;}
+nav {height: 50px;}
+section {height: 800px;}
+.article1 {height:230px;  border: 4px solid green;}
+.article2 {height:500px;}
+footer {height: 50px;}
 </style>
 </head>
 <body>
