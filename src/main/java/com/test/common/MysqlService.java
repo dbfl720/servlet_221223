@@ -1,12 +1,6 @@
 package com.test.common;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import com.mysql.jdbc.Driver;
+import java.sql.*;
 
 public class MysqlService {
 	// 필드
