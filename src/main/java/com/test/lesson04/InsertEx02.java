@@ -1,14 +1,12 @@
 package com.test.lesson04;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import java.io.*;
+import java.sql.*;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
-import com.test.common.MysqlService;
+import com.test.common.*;
 
 @WebServlet("/lesson04/insert_ex02")
 public class InsertEx02 extends HttpServlet{
@@ -24,6 +22,7 @@ public class InsertEx02 extends HttpServlet{
 		// DB 연결
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
+		
 		// DB insert
 		String insertQuery = "insert into `new_user` (`name`,`yyyymmdd`,`email`,`introduce`)"
 				+ "value('" + name + "','"  

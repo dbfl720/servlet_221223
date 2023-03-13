@@ -1,14 +1,12 @@
 package com.test.lesson04;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import java.io.*;
+import java.sql.*;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
-import com.test.common.MysqlService;
+import com.test.common.*;
 
 @WebServlet("/lesson04/delete_ex02")
 public class DeleteEx02 extends HttpServlet {
@@ -42,3 +40,8 @@ public class DeleteEx02 extends HttpServlet {
 		
 	}
 }
+
+
+
+
+
