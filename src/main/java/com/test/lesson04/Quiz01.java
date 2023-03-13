@@ -18,7 +18,7 @@ public class Quiz01 extends HttpServlet{
 		
 		
 		// db 연결
-		MysqlService ms = MysqlService.getInstance();
+		MysqlService ms = MysqlService.getInstance();  // static 메모리이기 때문에 객체 생성안해도 사용 가능.
 		ms.connect();  // !!!!!!!**** 실질적인 DB연결 (꼭 써야함!)
 		
 		
@@ -46,7 +46,7 @@ public class Quiz01 extends HttpServlet{
 		}	catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+	 
 		// db 연결 해제
 		ms.disconnect();
 	}
