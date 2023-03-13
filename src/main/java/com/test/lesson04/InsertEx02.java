@@ -1,5 +1,8 @@
 package com.test.lesson04;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +14,7 @@ import com.test.common.MysqlService;
 public class InsertEx02 extends HttpServlet{
 
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// request parameteres 꺼낸다.
 			String name = request.getParameter("name");
 			String yyyymmdd = request.getParameter("yyyymmdd");
@@ -27,10 +30,20 @@ public class InsertEx02 extends HttpServlet{
 				+  yyyymmdd + "', '" + email + "', '" 
 				+ introduce + "')"; 
 		
+		
+		try {
+			ms.update(insertQuery);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		// DB 연결 해제
 		ms.disconnect();
-		// 유저목록 화면으로 Redirect
 		
+		// 유저목록 화면으로 Redirect
+		response.sendRedirect("/lesson04/ex02_1.jsp");
 	}
 
 }
