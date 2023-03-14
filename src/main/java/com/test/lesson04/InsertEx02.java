@@ -33,7 +33,6 @@ public class InsertEx02 extends HttpServlet{
 		try {
 			ms.update(insertQuery);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
