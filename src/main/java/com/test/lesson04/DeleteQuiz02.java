@@ -12,6 +12,7 @@ import com.test.common.*;
 public class DeleteQuiz02 extends HttpServlet {
 
 		@Override
+//		앵커태크를 통해서 넘어오는 것이기 때문에 doGet으로 해야됨!!!!
 		public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
 			// request parameter
 			int id = Integer.valueOf(request.getParameter("id"));

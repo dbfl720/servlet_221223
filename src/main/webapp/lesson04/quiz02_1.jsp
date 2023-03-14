@@ -11,12 +11,17 @@
 </head>
 <body>
 <div class="container">
+<!-- post쓰는 이유 : 1. 보완 지키기 위해, 2. 내용이 클 수도 있는데, 이미지는 get으로 못보냄.  -->
 	<form method="post" action="/lesson04/insert_quiz02">
 		<h1>즐겨찾기 추가</h1><br>
-		<div>사이트명:</div>
-		<input type="text" name="name" class="form-control col-3"><br>
-		<div>사이트 주소:</div>
-		<input type="text" name="url" class="form-control col-5"><br>
+		<div class="form-group">
+			<label for="name">사이트명:</label>
+			<input type="text" id="name" name="name" class="form-control col-3">
+		</div>
+		<div class="form-group">
+			<label class="form-group">사이트 주소:</label>
+			<input type="text" id="name" name="url" class="form-control col-5">
+		</div>
 		<button type="submit" class="btn btn-success">추가</button>
 	</form>
 </div>
