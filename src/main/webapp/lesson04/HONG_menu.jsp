@@ -5,7 +5,7 @@
 <ul class="nav nav-fill w-100">
 	<li class="nav-item"><a href="#"
 		class="text-light font-weight-bold">리스트</a></li>
-	<li class="nav-item"><a href="#"
+	<li class="nav-item"><a href="/lesson04/HONG_Insert_layout.jsp"
 		class="text-light font-weight-bold">물건 올리기</a></li>
 	<li class="nav-item"><a href="#"
 		class="text-light font-weight-bold">마이 페이지</a></li>
