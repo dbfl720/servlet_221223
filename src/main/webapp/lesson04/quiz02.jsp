@@ -39,8 +39,9 @@
 		%>
 			<tr>
 				<td><%= res.getString("name") %></td>
-				<td><a href="<%= res.getString("url") %>"><%= res.getString("url")  %></a></td>
-				<td><a href="/lesson04/delete_quiz02?id=<%= res.getInt("id")%>" class="btn btn-danger">삭제</a></td>
+				<td><a href="<%= res.getString("url") %>" target="_blank"><%= res.getString("url")  %></a></td>
+				<td><a href="/lesson04/delete_quiz02?id=<%= res.getInt("id")%>"  class="btn btn-danger">삭제</a></td>
+				<!--  target="_blank"  새탭으로 열 수 있다! -->
 				<!--앵커태그는 get방식으로 보낸다는 뜻임.  -->
 				<!--완성 후, id가 잘 보내지는지 꼭 체크해야됨!  -->
 			</tr>
