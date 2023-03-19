@@ -13,12 +13,12 @@
 <style>
 header {height: 100px; background-color: #FF8000;}
 nav {height: 70px; background-color: #FF8000;}
-section {height:500px;}
+section {height:500px;} 
 .article1 {height:500px;  width: 80%; margin: 0 auto;}
 .article-text {color: #FF8000; font-weight: bold;}
 .box {border: 3px solid #FF8000; padding:10px; width:360px; height:330px;}
 .box:hover {background-color:#F7BE81;}
-footer {height:100px;}
+footer {min-height:100px;}
 </style>
 </head>
 
@@ -30,9 +30,11 @@ footer {height:100px;}
 		<nav class=" d-flex justify-content-between align-items-center">
 			<jsp:include page="HONG_menu.jsp" />
 		</nav>
-		<section>
-			<jsp:include page="HONG_Insert_content.jsp" />
-		</section>
+		<div class="warpper2">
+			<section>
+				<jsp:include page="HONG_Insert_content.jsp" />
+			</section>
+		</div>
 		<footer class=" d-flex justify-content-center align-items-center">
 			<jsp:include page="HONG_footer.jsp" />
 		</footer>
