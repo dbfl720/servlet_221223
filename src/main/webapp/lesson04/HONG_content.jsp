@@ -46,25 +46,26 @@
 	<%
 
 					while(res.next()) {
-					 	if(res.getString("imageUrl") != null){ 
+					 	if(res.getString("imageUrl") == null || res.getString("imageUrl").equals("")){ 
 						
 				%>
-	<div class="box mt-3">
-		<img src="<%= res.getString("imageUrl") %>" id="imageUrl" name="iamgeUrl" alt="이미지 " width="330"
-			height="200">
+				<div class="box mt-3">
+		<div id="image" class="d-flex text-secondary align-items-center justify-content-center ">이미지 없음</div>
 		<h4 class="mt-3"><%= res.getString("title") %></h4>
-		<small class="text-secondary" name="price"><%= res.getString("price") %>원</small><br>
+		<small class="text-secondary"><%= res.getString("price") %>원</small><br>
 		<small class="article-text"><%= res.getString("nickname") %></small>
 	</div>
+
 
 	<%
 						} else{
 							
 				%>
-	<div class="box mt-3">
-		<div id="image" class="d-flex text-secondary align-items-center justify-content-center ">이미지 없음</div>
+		<div class="box mt-3">
+		<img src="<%= res.getString("imageUrl") %>" id="imageUrl" name="iamgeUrl" alt="이미지 " width="330"
+			height="200">
 		<h4 class="mt-3"><%= res.getString("title") %></h4>
-		<small class="text-secondary"><%= res.getString("price") %>원</small><br>
+		<small class="text-secondary" name="price"><%= res.getString("price") %>원</small><br>
 		<small class="article-text"><%= res.getString("nickname") %></small>
 	</div>
 				  

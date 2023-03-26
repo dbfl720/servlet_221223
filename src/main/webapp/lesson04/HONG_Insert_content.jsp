@@ -53,35 +53,24 @@
 
 
 
- 	<script>
-		$(document).ready(function() {
-			$("#button".on("click",function()
-				let id = $('#id').val();
-				let title = $('#title').val();
-				let price = $('#price').val();
-			if($(id != "" && title != "" && price != "") { 
-			
-			
-	</script> 
-
 
 
 	<article class="article1">
-		<form method="post" action="/lesson04/HONG_Insert">
+		<form id="inputForm" method="post" action="/lesson04/HONG_Insert">
 			<div class="display-4 pt-5 pb-5">물건 올리기</div>
 
 			<div class="d-flex justify-content-between">
-				<select name="id"
+				<select name="id" id= "selectId"
 					class="form-select form-select-sm form-control col-3">
-					<option selected>-아이디 선택-</option>
+					<option value="default">-아이디 선택-</option>
 					<%
 					while (res.next()) {
 					%>
-					<option id= "id" value=<%=res.getString("id")%>><%=res.getString("nickname")%></option>
+					<option  value=<%=res.getString("id")%>><%=res.getString("nickname")%></option>
 					<%
 					}
 					%>
-				</select> <input name="title" type="text" id="title"
+				</select> <input id="title" name="title" type="text" 
 					class="form-control col-5 mr-3 ml-3" placeholder="제목">
 				<div class="input-group">
 					<input id="price" name="price" type="text" class="form-control col-10"
@@ -102,13 +91,39 @@
 	</article>
 	</form>
 
-	<script>
-		} else {
-			alert("닉네임, 가격, 제목을 쓰세요."")
-		}
-			}); // button.on"click"
-		} // ready
-	</script>
+
+
+
+	
+
+ 	<script>
+		$(document).ready(function() {
+			$("#inputForm").on("submit",function(e) {
+				
+				var title = $('#title').val();
+				var price = $('#price').val();
+				
+				if($("#selectId").val() == "default") { 
+					alert("판매자를 선택하세요.");
+					return false;
+				}
+				
+				if(title == null || title == "") {
+					alert("제목을 입력하세요.");
+					return false;
+					}
+				
+				if(price == null || price == "") {
+					alert("가격을 입력하세요.");
+					return false;
+				}
+				return true;
+		    });
+			
+		});
+			
+
+	</script> 
 
 </body>
 </html>
