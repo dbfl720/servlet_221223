@@ -18,9 +18,13 @@ jqeury 를 통해서 판매자, 제목, 가격에 유효성 검사를 해서 비
 insert 후 위에서 만든 목록 출력 페이지로 리다이렉트 하세요.
 
 
+
+https://user-images.githubusercontent.com/116433637/227770045-06ae8fb0-4611-4232-9785-2e1086b565f3.mp4
+
+
 ![스크린샷 2023-03-26 오후 7 02 17](https://user-images.githubusercontent.com/116433637/227769980-a6dc45d5-2f9d-4dcd-8d2a-b868e6404c43.png)
 ![스크린샷 2023-03-26 오후 7 01 04](https://user-images.githubusercontent.com/116433637/227769985-ccafcd89-76ea-4ae9-b19a-76074d97a7ed.png)
-<br><br><br><br>
+<br><br>
 
 
 
@@ -35,7 +39,7 @@ https://user-images.githubusercontent.com/116433637/224470572-60d72d32-6b68-4284
 
 ![스크린샷 2023-03-11 오후 3 43 58](https://user-images.githubusercontent.com/116433637/224470575-8af4b09a-a160-44e8-a00c-4a7c62321186.png)
 ![스크린샷 2023-03-11 오후 3 44 13](https://user-images.githubusercontent.com/116433637/224470580-bf75d847-c62d-4a32-9e53-9fd524a4ab24.png)
-<br><br><br><br>
+<br><br>
 
 
 
@@ -54,4 +58,4 @@ https://user-images.githubusercontent.com/116433637/224470630-a55f701b-baaa-481e
 ![스크린샷 2023-03-11 오후 3 43 18](https://user-images.githubusercontent.com/116433637/224470637-65469cee-9ccb-4820-a8f3-0727c2013939.png)
 ![스크린샷 2023-03-11 오후 3 43 32](https://user-images.githubusercontent.com/116433637/224470640-bb2f3b6e-4bfa-4e5a-93e7-de5b818257d0.png)
 ![스크린샷 2023-03-11 오후 3 43 47](https://user-images.githubusercontent.com/116433637/224470642-3aff2bdc-9be9-4cd4-9d3e-dee294447234.png)
-<br><br><br><br>
+<br><br>
